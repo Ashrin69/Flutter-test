@@ -1,0 +1,164 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Inter-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Inter-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/SpaceGrotesk-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/HindSiliguri-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Hind Siliguri';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/HindSiliguri-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Hind Siliguri';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/HindSiliguri-Bold.woff2') format('woff2');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 20% 94%;
+    --foreground: 212 45% 15%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 212 45% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 212 45% 15%;
+    
+    --primary: 212 45% 25%;
+    --primary-foreground: 225 20% 98%;
+    
+    --secondary: 225 10% 90%;
+    --secondary-foreground: 212 45% 25%;
+    
+    --muted: 225 10% 90%;
+    --muted-foreground: 212 25% 45%;
+    
+    --accent: 29 17% 57%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 225 10% 88%;
+    --input: 225 10% 88%;
+    --ring: 212 45% 35%;
+    
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 212 40% 8%;
+    --foreground: 225 20% 90%;
+
+    --card: 212 30% 16%;
+    --card-foreground: 225 20% 90%;
+
+    --popover: 212 30% 12%;
+    --popover-foreground: 225 20% 90%;
+
+    --primary: 225 20% 94%;
+    --primary-foreground: 212 45% 25%;
+
+    --secondary: 212 30% 20%;
+    --secondary-foreground: 225 20% 94%;
+
+    --muted: 212 30% 20%;
+    --muted-foreground: 225 20% 70%;
+
+    --accent: 29 25% 65%;
+    --accent-foreground: 212 45% 15%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 212 30% 25%;
+    --input: 212 30% 25%;
+    --ring: 29 25% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: linear-gradient(135deg, hsl(var(--primary)/0.2), hsl(var(--accent)/0.1) 50%, hsl(var(--primary)/0.2));
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  @keyframes slide-in-from-right {
+    from {
+      transform: translateX(5%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in {
+    animation: slide-in-from-right 0.4s ease-out forwards;
+  }
+}
